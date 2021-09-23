@@ -30,8 +30,8 @@ class alamouti_estimator(gr.sync_block):
         num_proc = len(in0)//2
 
         for i in range(num_proc):            
-            yb = numpy.matrix( [ [in0[i*2]], [numpy.conj(in0[i*2+1])] ] )
-            H_est = self.symbol_mtx_inv * yb
+            y = numpy.matrix( [ [in0[i*2]], [in0[i*2+1]] ] )
+            H_est = self.symbol_mtx_inv * y
             out[2*i], out[2*i+1] = H_est[0], H_est[1]
         return num_proc * 2
 

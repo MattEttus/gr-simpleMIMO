@@ -30,7 +30,7 @@ class alamouti_receiver(gr.sync_block):
             H_mtx = numpy.matrix( [[H_vec[i,0], H_vec[i,1]], [numpy.conj(H_vec[i,1]), -numpy.conj(H_vec[i,0])]])
             H_inv = H_mtx.I
             for j in range(4):
-                x_est = numpy.matmul(H_inv, numpy.array([[sig[i,j*2]],[sig[i,j*2+1]]]))
+                x_est = numpy.matmul(H_inv, numpy.array([[sig[i,j*2]],numpy.conj([sig[i,j*2+1]])]))
                 #x_est = numpy.matmul(H_inv, sig[i,(j*2):(j*2+2)]
                 
                 out[i,j*2] = x_est[0]
