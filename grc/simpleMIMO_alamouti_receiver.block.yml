@@ -12,11 +12,11 @@ templates:
 #     * label (label shown in the GUI)
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 #     * default
-parameters:
-- id: parametername_replace_me
-  label: FIX ME:
-  dtype: string
-  default: You need to fill in your grc/simpleMIMO_alamouti_receiver.block.yaml
+# parameters:
+# - id: parametername_replace_me
+#   label: FIX ME:
+#   dtype: string
+#   default: You need to fill in your grc/simpleMIMO_alamouti_receiver.block.yaml
 #- id: ...
 #  label: ...
 #  dtype: ...
@@ -29,16 +29,19 @@ parameters:
 #      * vlen (optional - data stream vector length. Default is 1)
 #      * optional (optional - set to 1 for optional inputs. Default is 0)
 inputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
-#  vlen: ...
-#  optional: ...
+- label: H
+  dtype: complex
+  vlen: 2
+
+- label: in
+  dtype: complex
+  vlen: 8
 
 outputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
+- label: out
+  dtype: complex
+  vlen: 8
+
 #  vlen: ...
 #  optional: ...
 

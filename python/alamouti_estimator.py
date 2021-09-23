@@ -22,9 +22,6 @@ class alamouti_estimator(gr.sync_block):
 
         self.alpha = alpha
         self.symbol_mtx_inv = numpy.matrix( [ [ 1, 1 ], [ -1, 1 ] ]).I
-        # self.H_est = numpy.matrix( [ [1+0j],[1+0j] ] )
-
-        # print(f"{self.symbol_mtx_inv=}")
 
     def work(self, input_items, output_items):
         in0 = input_items[0]
@@ -36,7 +33,6 @@ class alamouti_estimator(gr.sync_block):
             yb = numpy.matrix( [ [in0[i*2]], [numpy.conj(in0[i*2+1])] ] )
             H_est = self.symbol_mtx_inv * yb
             out[2*i], out[2*i+1] = H_est[0], H_est[1]
-            # print(f"{H_est=}")
         return num_proc * 2
 
         
