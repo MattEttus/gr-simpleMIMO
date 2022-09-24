@@ -1,10 +1,10 @@
-id: simpleMIMO_alamouti_estimator
-label: alamouti_estimator
+id: simpleMIMO_mimo_estimator
+label: mimo_estimator
 category: '[simpleMIMO]'
 
 templates:
   imports: import simpleMIMO
-  make: simpleMIMO.alamouti_estimator(${alpha})
+  make: simpleMIMO.mimo_estimator(${alpha})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -29,18 +29,20 @@ parameters:
 #      * vlen (optional - data stream vector length. Default is 1)
 #      * optional (optional - set to 1 for optional inputs. Default is 0)
 inputs:
-- label: in
-#  domain: ...
+- label: in0
   dtype: complex
-#  vlen: ...
-#  optional: ...
+- label: in1
+  dtype: complex
 
 outputs:
-- label: out
-#  domain: ...
+- label: out00
   dtype: complex
-#  vlen: ...
-#  optional: ...
+- label: out01
+  dtype: complex
+- label: out10
+  dtype: complex
+- label: out11
+  dtype: complex
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.

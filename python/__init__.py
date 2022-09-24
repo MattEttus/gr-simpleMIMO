@@ -22,4 +22,8 @@ except ModuleNotFoundError:
 # import any pure python here
 from .alamouti_estimator import alamouti_estimator
 from .alamouti_receiver import alamouti_receiver
+from .mimo_estimator import mimo_estimator
+from .svd_precoder import svd_precoder
+from .svd_postcoder import svd_postcoder
+
 #

@@ -8,5 +8,9 @@
 
 install(FILES
     simpleMIMO_alamouti_estimator.block.yml
-    simpleMIMO_alamouti_receiver.block.yml DESTINATION share/gnuradio/grc/blocks
+    simpleMIMO_alamouti_receiver.block.yml
+    simpleMIMO_mimo_estimator.block.yml
+    simpleMIMO_test.block.yml
+    simpleMIMO_svd_precoder.block.yml
+    simpleMIMO_svd_postcoder.block.yml DESTINATION share/gnuradio/grc/blocks
 )

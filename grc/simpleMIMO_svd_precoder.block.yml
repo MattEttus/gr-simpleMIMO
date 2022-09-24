@@ -1,10 +1,10 @@
-id: simpleMIMO_alamouti_estimator
-label: alamouti_estimator
+id: simpleMIMO_svd_precoder
+label: svd_precoder
 category: '[simpleMIMO]'
 
 templates:
   imports: import simpleMIMO
-  make: simpleMIMO.alamouti_estimator(${alpha})
+  make: simpleMIMO.svd_precoder()
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -13,10 +13,10 @@ templates:
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 #     * default
 parameters:
-- id: alpha
-  label: alpha
-  dtype: float
-  default: 0.0
+# - id: parametername_replace_me
+#   label: FIX ME:
+#   dtype: string
+#   default: You need to fill in your grc/simpleMIMO_svd_precoder.block.yaml
 #- id: ...
 #  label: ...
 #  dtype: ...
@@ -29,18 +29,25 @@ parameters:
 #      * vlen (optional - data stream vector length. Default is 1)
 #      * optional (optional - set to 1 for optional inputs. Default is 0)
 inputs:
-- label: in
-#  domain: ...
+- label: in0
   dtype: complex
-#  vlen: ...
-#  optional: ...
+- label: in1
+  dtype: complex
+- label: h00
+  dtype: complex
+- label: h01
+  dtype: complex
+- label: h10
+  dtype: complex
+- label: h11
+  dtype: complex
 
 outputs:
-- label: out
-#  domain: ...
+- label: out0
   dtype: complex
-#  vlen: ...
-#  optional: ...
+- label: out1
+  dtype: complex
+
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.
