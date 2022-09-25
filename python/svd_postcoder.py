@@ -40,7 +40,7 @@ class svd_postcoder(gr.sync_block):
             u, s, v = numpy.linalg.svd(H)
 
             x = numpy.matrix([[in0[i]],[in1[i]]])
-            r = u.I @ x
+            r = u.H @ x
             out0[i] = r[0]
             out1[i] = r[1]
 
