@@ -47,6 +47,13 @@ outputs:
   dtype: complex
 - label: out1
   dtype: complex
+- label: mag0
+  dtype: float
+  optional: 1
+- label: mag1
+  dtype: float
+  optional: 1
+
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.
