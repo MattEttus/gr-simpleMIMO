@@ -37,7 +37,7 @@ class svd_postcoder(gr.sync_block):
         for i in range(len(out0)):
             H = numpy.matrix([[h00[i],h01[i]],
                             [h10[i],h11[i]]])
-            u, s, v = numpy.linalg.svd(H)
+            u, s, vh = numpy.linalg.svd(H)
 
             x = numpy.matrix([[in0[i]],[in1[i]]])
             r = u.H @ x

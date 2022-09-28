@@ -35,10 +35,10 @@ class svd_precoder(gr.sync_block):
         for i in range(len(out0)):
             H = numpy.matrix([[h00[i],h01[i]],
                             [h10[i],h11[i]]])
-            u, s, v = numpy.linalg.svd(H)
+            u, s, vh = numpy.linalg.svd(H)
 
             x = numpy.matrix([[in0[i]],[in1[i]]])
-            t = v.H @ x
+            t = vh.H @ x
             out0[i] = t[0]
             out1[i] = t[1]
         return len(out0)
